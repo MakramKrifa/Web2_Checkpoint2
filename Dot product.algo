@@ -1,0 +1,26 @@
+FUNCTION dot_product (v1,v2 : ARRAY_OF FLOAT[2]) : FLOAT
+    VAR ps:Float 
+BEGIN
+    ps:=v1[0]*v2[0]+v1[1]*v2[1]
+    RETURN ps ;
+END
+
+ALGORITHM Dot product
+VAR
+    n,i,j:INTEGER
+    x:FLOAT
+    V1,V2 : ARRAY_OF FLOAT[2]
+BEGIN
+    Write("Set n : Number of pair of vectors")
+    Read(n)
+    FOR i FROM 1 TO n STEP 1  DO
+        Read(V1[0],V1[1])
+        Read(V2[0],V2[1])
+        x=dot_product(V1,V2)
+        IF (x=0) THEN
+            Write("V1{ " , V1[0] ," , ", V1[1], "} et V2 { " ,V2[0], " , ",V2[1],"} sont orthogonaux")
+        ELSE
+            Write("V1{ " , V1[0] ," , ", V1[1], "} et V2 { " ,V2[0], " , ",V2[1],"} ne sont pas orthogonaux")
+        END_IF ()
+    END_FOR
+END
